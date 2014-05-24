@@ -1,3 +1,5 @@
+
+#Merges the training and the test sets to create one data set.
 train<-read.csv("train/X_train.txt",sep="",header=FALSE)
 ltrain<-read.csv("train/y_train.txt",sep="",header=FALSE)
 test<-read.csv("test/X_test.txt",sep="",header=FALSE)
@@ -35,6 +37,10 @@ names(allc)[563]<-"subject"
 
 noms<-names(allc)
 
+#Extracts only the measurements on the mean and standard deviation for each measurement. 
+
+
+
 ismd<-NULL
 for (i in 1:length(noms))
 {
@@ -52,11 +58,16 @@ if (ismd[i]==TRUE)
 	}
 }
 
+#Uses descriptive activity names to name the activities in the data set
+#Appropriately labels the data set with descriptive activity names. 
+
 #add subject and activity)
 vindex<-c(vindex,562,563)
 
 #We select only the variables for mean and std
 allcf<-allc[,vindex]
+
+Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 ###first tidy data 
 td1<-NULL
