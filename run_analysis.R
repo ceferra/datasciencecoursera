@@ -69,6 +69,8 @@ for (i in 1:(length(allcf[1,])-2))
 }
 
 
+###second tidy data 
+
 td2<-matrix(ncol=33,nrow=(30*6))
 k<-1
  for (sb in 1:30) #subjects
